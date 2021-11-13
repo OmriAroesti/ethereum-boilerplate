@@ -79,11 +79,9 @@ const App = ({ isServerInfo }) => {
               width: "100%",
               justifyContent: "center",
             }}
-            defaultSelectedKeys={["quickstart"]}
+            defaultSelectedKeys={["dex"]}
           >
-            <Menu.Item key="quickstart">
-              <NavLink to="/quickstart">🚀 Quick Start</NavLink>
-            </Menu.Item>
+
             <Menu.Item key="wallet">
               <NavLink to="/wallet">👛 Wallet</NavLink>
             </Menu.Item>
@@ -102,9 +100,7 @@ const App = ({ isServerInfo }) => {
             <Menu.Item key="nft">
               <NavLink to="/nftBalance">🖼 NFTs</NavLink>
             </Menu.Item>
-            <Menu.Item key="contract">
-              <NavLink to="/contract">📄 Contract</NavLink>
-            </Menu.Item>
+
           </Menu>
           <div style={styles.headerRight}>
             <Chains />
@@ -120,9 +116,6 @@ const App = ({ isServerInfo }) => {
         </Header>
         <div style={styles.content}>
           <Switch>
-            <Route path="/quickstart">
-              <QuickStart isServerInfo={isServerInfo} />
-            </Route>
             <Route path="/wallet">
               <Wallet />
             </Route>
@@ -151,14 +144,12 @@ const App = ({ isServerInfo }) => {
             <Route path="/nftBalance">
               <NFTBalance />
             </Route>
-            <Route path="/contract">
-              <Contract />
-            </Route>
+
             <Route path="/nonauthenticated">
               <>Please login using the "Authenticate" button</>
             </Route>
           </Switch>
-          <Redirect to="/quickstart" />
+          <Redirect to="/1inch" />
         </div>
       </Router>
       <Footer style={{ textAlign: "center" }}>

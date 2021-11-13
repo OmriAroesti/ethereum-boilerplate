@@ -1,0 +1,17 @@
+            <Menu.Item key="quickstart">
+              <NavLink to="/quickstart">🚀 Quick Start</NavLink>
+            </Menu.Item>
+
+            <Menu.Item key="contract">
+              <NavLink to="/contract">📄 Contract</NavLink>
+            </Menu.Item>
+
+
+
+            <Route path="/quickstart">
+              <QuickStart isServerInfo={isServerInfo} />
+            </Route>
+
+            <Route path="/contract">
+              <Contract />
+            </Route>
