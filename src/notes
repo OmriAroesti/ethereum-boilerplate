@@ -1,3 +1,6 @@
+import QuickStart from "components/QuickStart";
+import Contract from "components/Contract/Contract";
+            
             <Menu.Item key="quickstart">
               <NavLink to="/quickstart">🚀 Quick Start</NavLink>
             </Menu.Item>

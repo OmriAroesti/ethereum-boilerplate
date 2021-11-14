@@ -9,9 +9,9 @@ function AddressInput(props) {
   const [validatedAddress, setValidatedAddress] = useState("");
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  useEffect(() => {
+  useEffect((props) => {
     if (validatedAddress) props.onChange(address);
-  }, [address]);
+  }, [validatedAddress, address]);
 
   const updateAddress = useCallback((address) => {
     if (address.length === 42) setValidatedAddress(getEllipsisTxt(address, 10));

@@ -14,7 +14,7 @@ function Ramper() {
     }
     initPlugin();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [Moralis.Plugins]);
+  }, [Moralis.Plugins.fiat]);
 
   return (
     <iframe
