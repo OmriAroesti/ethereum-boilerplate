@@ -9,7 +9,7 @@ import {
 } from "react-router-dom";
 import Account from "components/Account";
 import Chains from "components/Chains";
-import TokenPrice from "components/TokenPrice";
+import Home from "components/Home";
 import ERC20Balance from "components/ERC20Balance";
 import ERC20Transfers from "components/ERC20Transfers";
 import InchDex from "components/InchDex";
@@ -19,18 +19,14 @@ import { Menu, Layout, Tabs } from "antd";
 import "antd/dist/antd.css";
 import NativeBalance from "components/NativeBalance";
 import "./style.css";
-import Text from "antd/lib/typography/Text";
 import Ramper from "components/Ramper";
-const { Header, Footer } = Layout;
+const { Header } = Layout;
 
 const styles = {
   content: {
-    display: "flex",
-    justifyContent: "center",
-    fontFamily: "Roboto, sans-serif",
-    color: "#041836",
+    height: '100%',
+    padding: '0 160px',
     marginTop: "130px",
-    padding: "10px",
   },
   header: {
     position: "fixed",
@@ -77,9 +73,11 @@ const App = ({ isServerInfo }) => {
               width: "100%",
               justifyContent: "center",
             }}
-            defaultSelectedKeys={["dex"]}
+            defaultSelectedKeys={['home']}
           >
-
+            <Menu.Item key="home">
+              <NavLink to="/home">Home</NavLink>
+            </Menu.Item>
             <Menu.Item key="wallet">
               <NavLink to="/wallet">👛 Wallet</NavLink>
             </Menu.Item>
@@ -108,6 +106,9 @@ const App = ({ isServerInfo }) => {
         </Header>
         <div style={styles.content}>
           <Switch>
+            <Route path="/home">
+              <Home />
+            </Route>
             <Route path="/wallet">
               <Wallet />
             </Route>
@@ -138,10 +139,10 @@ const App = ({ isServerInfo }) => {
             </Route>
 
             <Route path="/nonauthenticated">
-              <>Please login using the "Authenticate" button</>
+              Please login using the "Authenticate" button
             </Route>
           </Switch>
-          <Redirect to="/1inch" />
+          <Redirect to="/home" />
         </div>
       </Router>
     </Layout>
