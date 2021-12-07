@@ -18,3 +18,11 @@
   overflow: auto;
   border-radius: 1rem;
 }
+
+.ant-layout {
+  /* background-image: url("./assets/bg.jpg");
+  background-position: -1050px -450px;
+  background-repeat: no-repeat; */
+  background: rgb(61,137,162);
+  background: radial-gradient(at 50% -500px, #3d89a2 0, #4691a6 20%, #1c2765 59%, #0e0b22 100%);
+}
